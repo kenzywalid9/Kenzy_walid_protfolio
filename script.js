@@ -122,8 +122,8 @@ if (contactForm) {
         
         // Get form data
         const formData = new FormData(this);
-        const email = formData.get('email');
-        const message = formData.get('message');
+        const email = formData.get('email') ? formData.get('email').trim() : '';
+        const message = formData.get('message') ? formData.get('message').trim() : '';
         
         // Simple validation
         if (!email || !message) {
